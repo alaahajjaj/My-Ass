@@ -1,9 +1,10 @@
 package com.example.myass;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,27 +23,30 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
-    EditText firstName,secondName,email,password;
-    Button signupButton;
+import android.os.Bundle;
+
+public class MainActivity2 extends AppCompatActivity {
+    EditText firstName2,secondName2,email2,password2;
+    Button signoutButton;
     RequestQueue requestQueue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        firstName=(EditText)findViewById(R.id.firstName);
-        secondName=(EditText)findViewById(R.id.secondName);
-        email=(EditText)findViewById(R.id.email);
-        password=(EditText)findViewById(R.id.firstName);
-        signupButton=(Button) findViewById(R.id.signupButton);
-        signupButton.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_main2);
+        firstName2=(EditText)findViewById(R.id.firstName2);
+        secondName2=(EditText)findViewById(R.id.secondName2);
+        email2=(EditText)findViewById(R.id.email2);
+        password2=(EditText)findViewById(R.id.firstName2);
+        signoutButton=(Button) findViewById(R.id.signupButton);
+        signoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String data = "{" +
-                        "\"firstName\"" + ":" + "\"" + firstName.getText().toString() + "\"," +
-                        "\"secondName\"" + ":" + "\"" + secondName.getText().toString() + "\"," +
-                        "\"email\"" + ":" + "\"" + email.getText().toString() + "\"," +
-                        "\"password\"" + ":" + "\"" + password.getText().toString() + "\"" +
+                        "\"firstName\"" + ":" + "\"" + firstName2.getText().toString() + "\"," +
+                        "\"secondName\"" + ":" + "\"" + secondName2.getText().toString() + "\"," +
+                        "\"email\"" + ":" + "\"" + email2.getText().toString() + "\"," +
+                        "\"password\"" + ":" + "\"" + password2.getText().toString() + "\"" +
                         "}";
                 Submit(data);
             }
@@ -70,4 +74,5 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-        };
+    }
+}}
